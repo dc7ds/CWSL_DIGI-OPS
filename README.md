@@ -1,2 +1,2 @@
 # CWSL_DIGI-OPS
-operational 
+operational insights, thoughts and advisories on CWSL_DIGI operation
