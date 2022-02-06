@@ -5,7 +5,7 @@ CWSL_DIGI monitoring scripts (soon)
 
 - data aquisition from console_log (Powershell)
 - graph generation (MRTG)
-  - FT8 spots
+  - FT8 spots (inclusing max. and avg. distance of spotted stations)
   - FT4 spots
   - WSPR spots
   - cw spots
