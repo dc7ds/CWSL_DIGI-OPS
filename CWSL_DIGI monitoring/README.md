@@ -40,7 +40,7 @@ To run the monitoring script and to generate the graphs, you'll need the MRTG pa
 
 
 #####TODO########
-- data aquisition from console_log (PowerShell)
+
 - graph generation (MRTG)
   - FT8 spots (including max. and avg. distance of spotted stations)
   - FT4 spots
