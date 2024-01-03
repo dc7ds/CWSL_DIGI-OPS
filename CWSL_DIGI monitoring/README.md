@@ -29,8 +29,13 @@ Use this argument in the task schedule: PowerShell.exe -ExecutionPolicy Bypass -
 
 3. Transfering log snippets to monitoring machine
 
-cwskimmer server and CWSL_DIGI are Windows-only tools. Most graphical monitoring tools work best on a Linux based environment.
+cwskimmer server and CWSL_DIGI are Windows-only tools. Most graphical monitoring tools work best on a Linux based environment, so we'll have to transfer the log snippets to a Linux machine for further processing.
+Here is an example Windows Batch-script, that does the transfer via putty pscp:
+"C:\Program Files\PuTTY\pscp" -P 22 -i "C:\Program Files\PuTTY\.ssh\[YOUR-PRIVATE-KEY].ppk" c:\Scripts\*.log [USERNAME]@[IP-OF-MONITORING-SERVER]:/tmp/
+Beforehand, you'll need to create a ssh keypair and place the public key in the respective authorized_keys file on your Linux machine.
 
+4. Preparing monitoring server
+To run the monitoring script and to generate the graphs, you'll need the MRTG package and some additional scripts
 
 
 
