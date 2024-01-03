@@ -13,13 +13,27 @@ CWSL_DIGI can generate logs, but you'll have to activate logging in CWSL_DIGI'S 
 
 Both logfiles are locked by the respective application and there is currently no rollover mechanism. Watch logfile size, because this can get really big and can fill up your diskspace.
 
+2. Preparing log snippets for further analysis
+Graphical monitoring tools like MRTG operate on a certain processing cycle. MRTG uses a 5 minute cycle. To prepare the logs, we need to sample the last 5 minutes of log activity. For this purpose, i created two scripts:
+
+a) https://github.com/dc7ds/CWSL_DIGI-OPS/blob/main/Powershell-scripts/last_5_min_cwskimmer.ps1
+
+This script reads the activity of the last 5 minutes from cwskimmer server spot log and writes it to a dedicated file
+
+b) https://github.com/dc7ds/CWSL_DIGI-OPS/blob/main/Powershell-scripts/last_5_min_CWSL_DIGI_skimmer.ps1
+
+This script reads the activity of the last 5 minutes from CWSL_DIGI console log and writes it to a dedicated file
+
+Create Windows Task Scheduler Jobs to run these scripts every 5 minutes 
+
+3. Transfering log snippets to monitoring machine
+
+cwskimmer server and CWSL_DIGI are Windows-only tools. Most graphical monitoring tools work best on a Linux based environment.
 
 
 
 
-
-
-
+#####TODO########
 - data aquisition from console_log (PowerShell)
 - graph generation (MRTG)
   - FT8 spots (including max. and avg. distance of spotted stations)
