@@ -24,7 +24,8 @@ b) https://github.com/dc7ds/CWSL_DIGI-OPS/blob/main/Powershell-scripts/last_5_mi
 
 This script reads the activity of the last 5 minutes from CWSL_DIGI console log and writes it to a dedicated file
 
-Create Windows Task Scheduler Jobs to run these scripts every 5 minutes 
+Create Windows Task Scheduler Jobs to run these scripts every 5 minutes. You may have to adapt your PowerShell execution policy to be able to run these scripts. Also, you may want to run there scripts in the same context that your skimming tools are running.
+Use this argument in the task schedule: PowerShell.exe -ExecutionPolicy Bypass -File C:\Scripts\last_5_min_skimmer.ps1
 
 3. Transfering log snippets to monitoring machine
 
